@@ -1,18 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    {% for post in posts %}
-    <img src="{{post.image.url}}" alt="" height="200">
-    <h6>Author: {{post.author.username}}</h6>
-    <strong>Description: {{post.description}}</strong>
-    <p>Date of the publication: {{post.created}}</p>
-    {% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>This text from index.html</h3>
+{% endblock %}
+
+{% block text %}
+<h3>This text from index.html too</h3>
+{% endblock %}
