@@ -9,12 +9,28 @@
 </head>
 <body>
     <h1>This is Menu</h1>
-    {% block content %}
+    <!--        login.html-->
+    {% if request.user.is_authenticated %}
+        <h4>Hello, {{request.user.username}}</h4>
+        <a href="{% url 'logout' %}">
+            <button>
+                Exit
+            </button>
+        </a>
+    {% else %}
+        <a href="{% url 'sign_in' %}">
+            <button class="btn btn-primary">
+                Sign in
+            </button>
+        </a>
+    {% endif %}
 
+    {% block content %}
+#index.html
     {% endblock  %}
     <h2>Footer</h2>
     {% block text %}
-
+#index.html
     {% endblock %}
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores at, culpa dignissimos earum eius esse illo, nesciunt non quae sint ut? Alias amet dignissimos earum incidunt magnam, maxime vitae.
