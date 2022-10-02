@@ -4,5 +4,5 @@ from posts.views import IndexPage
 
 
 urlpatterns = [
-    path("", IndexPage.as_view(), name="index"),
+    path("", IndexPage.as_view(), name="index.html"),
 ]

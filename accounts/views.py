@@ -18,7 +18,7 @@ class LoginView(FormView):
         if user is not None:
             if user.is_active:
                 login(self.request, user)
-                return redirect("index")
+                return redirect("index.html")
             return HttpResponse("Ваш аккаунт неактивен")
         return HttpResponse("Такого юзера не существует")
 
@@ -30,11 +30,14 @@ def register(request):
 def logout_user(request):
     if request.user.is_authenticated:
         logout(request)
-    return redirect("index")
+    return redirect("index.html")
 
 
 class UserRegisterView(CreateView):
     template_name = "register.html"
     form_class = UserRegisterForm
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("index.html")
 
+
+def get_profile(request):
+    return render(request, "profile.html")
