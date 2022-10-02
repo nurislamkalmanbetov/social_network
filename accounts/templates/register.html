@@ -16,30 +16,34 @@
           {% endfor %}
       {% endif %}
       <div class="mb-3">
-        <label class="form-label">Имя</label>
-        {{form.first_name}}
+        <label class="form-label">Login</label>
+        {{form.username}}
       </div>
       <div class="mb-3">
-        <label class="form-label">Фамилия</label>
+        <label class="form-label">Last Name</label>
         {{form.last_name}}
       </div>
       <div class="mb-3">
-        <label class="form-label">Отчество</label>
-        {{form.middle_name}}
+        <label class="form-label">First Name</label>
+        {{form.first_name}}
       </div>
       <div class="mb-3">
-        <label class="form-label">Почтовый адрес</label>
+        <label class="form-label">Post index</label>
         {{form.email}}
       </div>
       <div class="mb-3">
-        <label class="form-label">Номер телефона</label>
+        <label class="form-label">Phone number</label>
         {{form.phone}}
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date of birth</label>
+        {{form.birthday}}
       </div>
 
 
 
       <div class="mb-3">
-        <label class="form-label">Пароль</label>
+        <label class="form-label">Password</label>
         <div class="input-group input-group-flat">
           {{ form.password1  }}
           <span class="input-group-text">
@@ -50,7 +54,7 @@
         </div>
       </div>
       <div class="mb-3">
-        <label class="form-label"> Повторите  пароль</label>
+        <label class="form-label"> Repead Password</label>
         <div class="input-group input-group-flat">
           {{ form.password2  }}
           <span class="input-group-text">
@@ -61,11 +65,11 @@
         </div>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn btn-primary w-100">Регистрация</button>
+        <button type="submit" class="btn btn-primary w-100">Registration</button>
       </div>
     </div>
   </form>
   <div class="text-center text-muted mt-3">
-    Уже имеется аккаунт? <a href="#" tabindex="-1">Войти</a>
+    Have account? <a href="{% url 'sign_in' %}" tabindex="-1">Sign in</a>
   </div>
 {% endblock %}
